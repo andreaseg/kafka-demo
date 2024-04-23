@@ -1,0 +1,46 @@
+:root {
+  --max-width: 800px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --error-300: hsl(347, 74%, 36%);
+  --error-500: hsl(352, 74%, 48%);
+  --error-700: hsl(11, 87%, 50%);
+}
+
+.shadow-100 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.shadow-300 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .15), 0 2px 4px rgba(0, 0, 0, .12);
+}
+
+.shadow-500 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .15), 0 3px 6px rgba(0, 0, 0, .10);
+}
+
+.shadow-700 {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, .10);
+}
+
+.shadow-900 {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+}
+
+body {
+  background-color: rgb(213, 209, 205);
+  margin: 0;
+  font-family: Verdana, sans-serif;
+}
+
+h1 {
+  margin: 0
+}
+
+h2 {
+  font-size: 16px;
+  margin: 24px 0 12px 0;
+}

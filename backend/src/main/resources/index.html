@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <title>Kafka Demo Backend</title>
+    <script>
+        let showNoMessage = false;
+        let children = new Set();
+
+        async function refresh() {
+            const elem = document.getElementById("messages");
+            let response
+            try {
+                response = await fetch("http://localhost:8080/messages");
+            } catch (error) {
+                console.error(error);
+                return;
+            }
+            console.log("refresh");
+            const messages = await response.json();
+
+            // Show message if no rows received
+            if (messages.length === 0 && !showNoMessage) {
+                const noMessages = document.createElement("div");
+                noMessages.className = "noMessages";
+                noMessages.innerText = "Ingen meldinger mottatt";
+                elem.appendChild(noMessages);
+                showNoMessage = true;
+            }
+
+            // Remove message if number of rows are no longer zero
+            if (messages.length > 0 && showNoMessage) {
+                elem.innerHtml = '';
+                showNoMessage = false;
+            }
+
+            // Add message rows
+            messages.forEach((message) => {
+                if (!children.has(message.hash)) {
+                    const li = document.createElement("li");
+                    const idToAdd = `message_${message.hash}`;
+                    console.log(`Adding row with id ${idToAdd}`);
+                    li.id = idToAdd;
+
+                    const messageElem = document.createElement("div");
+                    messageElem.innerText = message.message;
+                    li.appendChild(messageElem);
+
+                    const dateElem = document.createElement("div");
+                    dateElem.innerText = message.timestamp;
+                    li.appendChild(dateElem);
+
+                    children.add(message.hash);
+                    elem.appendChild(li);
+                }
+            });
+
+            // Remove outdated message rows
+            const messageHashes = new Set(messages.map((message) => {return message.hash;}));
+            children.forEach((hash) => {
+                    if (!messageHashes.has(hash)) {
+                        const idToRemove = `message_${hash}`;
+                        console.log(`Removing row with id ${idToRemove}`);
+                        const nodeToBeRemoved = document.getElementById(idToRemove);
+                        elem.removeChild(nodeToBeRemoved);
+                    }
+                });
+
+        }
+
+        window.addEventListener('load', () => {
+            refresh();
+            setInterval(() => {refresh();}, 5000)
+        });
+    </script>
+    <style>
+        body {
+          background-color: rgb(213, 209, 205);
+          margin: 0;
+          font-family: Verdana, sans-serif;
+        }
+
+        main {
+            width: 528px;
+            background-color: white;
+            padding: 32px 24px 24px 24px;
+            margin: auto;
+        }
+
+        ul {
+            padding: 12px 0 0px 8px;
+            border-radius: 12px;
+            background-color: rgb(252, 250, 249);
+            width: 504px;
+            margin: 0 0 8px 0;
+
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, .10);
+        }
+
+        li {
+            list-style-type: none;
+            width: 488px;
+            min-height: 32px;
+            padding: 0 0 4px 8px;
+            margin: 0 0 8px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        li:not(:last-child) {
+            border-bottom: 1px solid rgb(213, 209, 205)
+        }
+
+        h1 {
+            margin: 24px 0px 8px 0px;
+            font-weight: 500;
+        }
+
+        h2 {
+            margin: 24px 0px 8px 0px;
+            font-weight: 500;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Kafka demo backend</h1>
+    <p>
+        Backend mottar meldinger og viser dem her
+    </p>
+    <p>
+    <h2>Meldinger</h2>
+    <ul id="messages"><div></div></ul>
+    </p>
+</main>
+</body>
+</html>
