@@ -1,0 +1,5 @@
+.code {
+    font-family: var(--font-mono);
+    margin: 4px 16px 8px 0px;
+    padding: 8px 8px 8px 8px;
+}

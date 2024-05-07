@@ -8,6 +8,7 @@
   --error-300: hsl(347, 74%, 36%);
   --error-500: hsl(352, 74%, 48%);
   --error-700: hsl(11, 87%, 50%);
+  --shadow-900: 0 20px 40px rgba(0, 0, 0, .2);
 }
 
 .shadow-100 {
@@ -27,7 +28,7 @@
 }
 
 .shadow-900 {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+  box-shadow: var(--shadow-900);
 }
 
 body {
@@ -36,11 +37,15 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+p {
+  margin: 0 0 24px 0;
+}
+
 h1 {
-  margin: 0
+  margin: 0 0 8px 0;
 }
 
 h2 {
   font-size: 16px;
-  margin: 24px 0 12px 0;
+  margin: 0 0 8px 0;
 }
