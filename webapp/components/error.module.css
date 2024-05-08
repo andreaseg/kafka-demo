@@ -59,7 +59,7 @@
 }
 
 .error_button:hover {
-    color: hsl(0, 0, 80);
+    color: var(--grey-700);
     background-color: var(--error-300);
 }
 
@@ -69,7 +69,7 @@
 }
 
 .error_tip {
-    color: rgb(86, 86, 86);
+    color: var(--grey-300);
     margin-bottom: 32px;
     font-weight: 300;
 }

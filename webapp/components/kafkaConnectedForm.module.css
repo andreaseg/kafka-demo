@@ -1,11 +1,11 @@
 .inactive_bg {
-    background-color: grey !important;
+    background-color: var(--grey-500) !important;
 }
 
 .inactive {
     pointer-events: none;
     cursor: not-allowed;
-    color: hsl(0, 0, 80) !important;
+    color: var(--grey-700) !important;
 }
 
 .active {}
@@ -28,7 +28,7 @@
 }
 
 .form:focus-within {
-    outline: 1px solid rgb(189, 165, 189);
+    outline: 1px solid var(--magenta-300);
 }
 
 .text {
@@ -53,7 +53,7 @@
 .resend {
     border-radius: var(--border-radius);
     border: 0;
-    background-color: rgb(0, 125, 0);
+    background-color: var(--green-500);
     color: white;
     font-size: 16px;
     padding: 4px 12px 4px 12px;
@@ -63,12 +63,12 @@
 
 .submit:hover,
 .resend:hover {
-    background-color: rgb(14, 89, 34);
-    color: hsl(0, 0, 80);
+    background-color: var(--green-300);
+    color: var(--grey-700);
 }
 
 .submit:active,
 .resend:active {
-    background-color: rgb(19, 137, 101);
+    background-color: var(--green-700);
 
 }

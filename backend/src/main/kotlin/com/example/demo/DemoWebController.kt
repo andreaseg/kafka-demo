@@ -29,6 +29,6 @@ class DemoWebController(
 
     @GetMapping("/messages")
     fun messages(): List<BackendPresentationMessage> =
-        database.messageStore
+        database.readAll()
             .map { BackendPresentationMessage.fromKafkaMessage(it) }
 }

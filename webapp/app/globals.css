@@ -8,31 +8,31 @@
   --error-300: hsl(347, 74%, 36%);
   --error-500: hsl(352, 74%, 48%);
   --error-700: hsl(11, 87%, 50%);
+
+  --green-300: hsl(136, 73%, 20%);
+  --green-500: hsl(120, 100%, 25%);
+  --green-700: hsl(147, 90%, 37%);
+
+  --grey-300: hsl(0, 0%, 34%);
+  --grey-500: hsl(0, 0%, 50%);
+  --grey-700: hsl(0, 0%, 80%);
+
+  --grey-warm-300: hsl(20, 6%, 39%);
+  --grey-warm-500: hsl(29, 14%, 54%);
+  --grey-warm-700: hsl(30, 9%, 82%);
+  --grey-warm-900: hsl(32, 14%, 90%);
+
+  --magenta-300: hsl(300, 15%, 69%);
+
+  --shadow-100: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  --shadow-300: 0 3px 6px rgba(0, 0, 0, .15), 0 2px 4px rgba(0, 0, 0, .12);
+  --shadow-500: 0 10px 20px rgba(0, 0, 0, .15), 0 3px 6px rgba(0, 0, 0, .10);
+  --shadow-700: 0 15px 25px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, .10);
   --shadow-900: 0 20px 40px rgba(0, 0, 0, .2);
 }
 
-.shadow-100 {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-}
-
-.shadow-300 {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, .15), 0 2px 4px rgba(0, 0, 0, .12);
-}
-
-.shadow-500 {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .15), 0 3px 6px rgba(0, 0, 0, .10);
-}
-
-.shadow-700 {
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .15), 0 5px 10px rgba(0, 0, 0, .10);
-}
-
-.shadow-900 {
-  box-shadow: var(--shadow-900);
-}
-
 body {
-  background-color: rgb(213, 209, 205);
+  background-color: var(--grey-warm-700);
   margin: 0;
   font-family: Verdana, sans-serif;
 }

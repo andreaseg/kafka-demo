@@ -12,7 +12,7 @@ class DemoKafkaListener(
         topics = ["test-topic"],
     )
     fun listener(message: KafkaMessage) {
-        database.messageStore += message
+        database.save(message)
         println("Mottok melding ${message.message}")
     }
 }

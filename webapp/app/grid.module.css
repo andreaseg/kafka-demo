@@ -18,8 +18,8 @@
 
 .info {
     grid-area: info;
-    border-top: 1px solid rgb(234, 230, 227);
-    border-bottom: 1px solid rgb(234, 230, 227);
+    border-top: 1px solid var(--grey-warm-900);
+    border-bottom: 1px solid var(--grey-warm-900);
     padding: 4px 0px 4px 0px;
     margin-bottom: 36px;
     display: flex;
@@ -29,12 +29,12 @@
 .info a:link,
 .info a:visited {
     text-decoration: none;
-    color: rgb(106, 98, 94);
+    color: var(--grey-warm-300);
 }
 
 .info a:hover {
     text-decoration: none;
-    color: rgb(154, 137, 121);
+    color: var(--grey-warm-500);
 }
 
 .info a:active {
