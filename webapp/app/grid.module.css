@@ -17,24 +17,31 @@
 
 .info {
     grid-area: info;
+    border-top: 1px solid rgb(234, 230, 227);
+    border-bottom: 1px solid rgb(234, 230, 227);
+    padding: 4px 0px 4px 0px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info a:link,
+.info a:visited {
+    text-decoration: none;
+    color: rgb(106, 98, 94);
+}
+
+.info a:hover {
+    text-decoration: none;
+    color: rgb(154, 137, 121);
+}
+
+.info a:active {
+    text-decoration: none;
 }
 
 .spec {
     grid-area: spec;
 }
 
-@media (min-width: 848px) {
-    .main {
-        display: grid;
-        grid-template-columns: auto 300px;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "header ."
-            "content info";
-    }
-
-    .info {
-        border-left: 1px solid rgb(234, 230, 227);
-        padding-left: 16px;
-    }
-}
+@media (min-width: 848px) {}

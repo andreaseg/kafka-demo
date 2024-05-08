@@ -22,32 +22,21 @@ export default function RootLayout({
             <h1 className={grid.header}>
               Kafka Demo
             </h1>
-            {children}
+
 
             <div className={grid.info}>
-              <p>
-                <Link href="/">Forside</Link>
-              </p>
-              <p>
-                <Link href="/geek">Teknisk informasjon</Link>
-              </p>
 
-              <h2>Eksterne lenker</h2>
+              <Link href="/">Forside</Link>
 
-              <p>
-                Oversikt over kafka-kø
-                <br />
-                <a href="http://localhost:9021/clusters">Kafka control center</a>
-              </p>
+              <Link href="/geek">Teknisk informasjon</Link>
 
-              <p>
-                Grensesnitt for backend
-                <br />
-                <a href="http://localhost:8080">Backend tjeneste</a>
-              </p>
+              <a href="http://localhost:9021/clusters" target="_blank" rel="noopener noreferrer">Kafka control center↗</a>
 
+              <a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">Backend tjeneste↗</a>
 
             </div>
+
+            {children}
 
           </main>
         </ErrorAware>
