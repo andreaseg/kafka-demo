@@ -37,6 +37,13 @@ body {
   font-family: Verdana, sans-serif;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+
 p {
   margin: 0 0 24px 0;
 }
